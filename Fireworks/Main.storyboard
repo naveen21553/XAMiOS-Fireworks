@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,14 +17,135 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="220" translatesAutoresizingMaskIntoConstraints="NO" text="Night: ">
+                                <rect key="frame" x="30" y="678" width="62" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <constraints>
+                                    <constraint id="1257" firstAttribute="width" constant="62"/>
+                                    <constraint id="1258" firstAttribute="height" constant="33"/>
+                                </constraints>
+                            </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="1252" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="100" y="733" width="241" height="31"/>
+                                <connections>
+                                    <action selector="sliderSize_ValueChanged:" destination="BYZ-38-t0r" id="4871" eventType="valueChanged"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="5848" firstAttribute="width" constant="237"/>
+                                </constraints>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="1770" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="100" y="679" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchNight_ValueChanged:" destination="BYZ-38-t0r" id="4854" eventType="valueChanged"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1771" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="182" y="680" width="159" height="30"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.17254901960784314" green="0.65098039215686276" blue="0.8" alpha="1"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.996078431372549" green="0.996078431372549" blue="0.996078431372549" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="ButtonStart_TouchUpInside:" destination="BYZ-38-t0r" id="3029" eventType="touchUpInside"/>
+                                    <action selector="switchNight_ValueChanged:" destination="BYZ-38-t0r" id="4820" eventType="valueChanged"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="2011" firstAttribute="width" constant="159"/>
+                                </constraints>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="5849" translatesAutoresizingMaskIntoConstraints="NO" text="Size:">
+                                <rect key="frame" x="30" y="732" width="48" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <constraints>
+                                    <constraint id="5854" firstAttribute="width" constant="48"/>
+                                    <constraint id="5855" firstAttribute="height" constant="33"/>
+                                </constraints>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" lineBreakMode="middleTruncation" id="7741" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="337" y="47" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ButtonAbout_TouchUpInside:" destination="BYZ-38-t0r" id="7742" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1255" firstItem="220" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30"/>
+                            <constraint id="1256" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="220" secondAttribute="bottom" constant="101"/>
+                            <constraint id="2009" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="1771" secondAttribute="trailing" constant="34"/>
+                            <constraint id="2010" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="1771" secondAttribute="bottom" constant="102"/>
+                            <constraint id="2013" firstItem="1770" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100"/>
+                            <constraint id="2014" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="1770" secondAttribute="bottom" constant="102"/>
+                            <constraint id="5846" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="1252" secondAttribute="trailing" constant="36"/>
+                            <constraint id="5847" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="1252" secondAttribute="bottom" constant="49"/>
+                            <constraint id="5852" firstItem="5849" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30"/>
+                            <constraint id="5853" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="5849" secondAttribute="bottom" constant="47"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="switchNight" destination="1770" id="name-outlet-1770"/>
+                        <outlet property="buttonStart" destination="1771" id="name-outlet-1771"/>
+                        <outlet property="sliderSize" destination="1252" id="name-outlet-1252"/>
+                        <outlet property="buttonAbout" destination="7741" id="name-outlet-7741"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <scene sceneID="7676">
+            <objects>
+                <viewController id="7677" sceneMemberID="viewController" storyboardIdentifier="AboutViewController" customClass="AboutViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7674"/>
+                        <viewControllerLayoutGuide type="bottom" id="7675"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7678">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="7700" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="About Fireworks">
+                                <rect key="frame" x="102" y="80" width="170" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="7701" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="68" y="189" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7702" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="160" y="689" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="CLOSE">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="CloseButton_TouchUpInside:" destination="7677" id="7743" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="7702" id="name-outlet-7702"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7679" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="-5"/>
         </scene>
     </scenes>
 </document>
